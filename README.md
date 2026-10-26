@@ -27,7 +27,7 @@ an `.npmrc` that reads the token from the environment (never commit a literal to
 
 ```
 @nuvioo:registry=https://npm.pkg.github.com
-//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN-}
+//npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN?}
 ```
 
 ## Development
