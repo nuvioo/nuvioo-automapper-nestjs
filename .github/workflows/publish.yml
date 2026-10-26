@@ -22,7 +22,8 @@ jobs:
             - run: npm ci
             - name: Tag matches package version
               run: test "v$(node -p 'require("./package.json").version')" = "${GITHUB_REF_NAME}"
-            # prepublishOnly runs typecheck, tests and build first.
-            - run: npm publish
+            # prepublishOnly runs typecheck, tests and build first. Fork versions are always prereleases
+            # (<upstream>-nuvioo.<n>), which npm only publishes with an explicit dist-tag.
+            - run: npm publish --tag latest
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
