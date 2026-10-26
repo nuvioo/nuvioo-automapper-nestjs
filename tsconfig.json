@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es2022",
+        "module": "esnext",
+        "moduleResolution": "bundler",
+        "lib": ["es2022"],
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        // Upstream builds the library for es2021, where class fields keep assignment semantics; keep that emit so
+        // parameter properties are not re-declared as fields (output stays identical to @automapper/nestjs).
+        "useDefineForClassFields": false,
+        "strict": true,
+        "noImplicitOverride": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "types": ["node", "vitest/globals"],
+        "noEmit": true
+    },
+    "include": ["src/**/*.ts", "test/**/*.ts", "tsdown.config.ts", "vitest.config.ts"]
+}

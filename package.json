@@ -1,0 +1,76 @@
+{
+    "name": "@nuvioo/automapper-nestjs",
+    "version": "9.0.2-nuvioo.1",
+    "description": "AutoMapper NestJS integration (fork of @automapper/nestjs with NestJS 12 support)",
+    "type": "module",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.mts",
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.mts",
+            "import": "./dist/index.mjs",
+            "default": "./dist/index.mjs"
+        },
+        "./package.json": "./package.json"
+    },
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "sideEffects": false,
+    "engines": {
+        "node": ">=20.0.0"
+    },
+    "scripts": {
+        "build": "tsdown",
+        "test": "vitest run",
+        "typecheck": "tsc --noEmit",
+        "prepublishOnly": "npm run typecheck && npm test && npm run build"
+    },
+    "peerDependencies": {
+        "@automapper/core": "^9.0.2",
+        "@nestjs/common": "^10.0.0 || ^11.0.0 || ^12.0.0",
+        "@nestjs/core": "^10.0.0 || ^11.0.0 || ^12.0.0"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/nuvioo/nuvioo-automapper-nestjs.git"
+    },
+    "author": {
+        "name": "Chau Tran",
+        "email": "nartc7789@gmail.com",
+        "url": "https://nartc.me"
+    },
+    "contributors": [
+        "Nuvioo <developers@nuvioo.com>"
+    ],
+    "keywords": [
+        "typescript",
+        "automapper",
+        "mapper",
+        "nestjs"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "@automapper/classes": "^9.0.2",
+        "@automapper/core": "^9.0.2",
+        "@nestjs/common": "^12.2.0",
+        "@nestjs/core": "^12.2.0",
+        "@nestjs/testing": "^12.2.0",
+        "@swc/core": "^1.15.41",
+        "@types/node": "^24.19.2",
+        "reflect-metadata": "^0.2.2",
+        "rxjs": "~7.8.0",
+        "tsdown": "^0.22.14",
+        "typescript": "~6.0.3",
+        "unplugin-swc": "^1.5.9",
+        "vitest": "^4.1.9"
+    },
+    "allowScripts": {
+        "@swc/core": false
+    }
+}
